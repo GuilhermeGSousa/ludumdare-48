@@ -1,11 +1,22 @@
 using UnityEngine;
 using System;
 
+
+public enum DepthLayerNames // your custom enumeration
+ {
+    Surface, 
+    CoralArea, 
+    DeepSea,
+    Abysses,
+    Ground
+ };
 [System.Serializable]
 public class DepthLayer {
     public int span;
-    public string name;
+    public DepthLayerNames name;
 } 
+
+
 
 public class DepthBehaviour : MonoBehaviour {
 
@@ -27,6 +38,14 @@ public class DepthBehaviour : MonoBehaviour {
                 return layer;
         }
 
+        return null;
+    }
+
+    public DepthLayer getLayerNamed(DepthLayerNames name) {
+        foreach(DepthLayer layer in layers) {
+            if(layer.name == name)
+                return layer;
+        }
         return null;
     }
 
