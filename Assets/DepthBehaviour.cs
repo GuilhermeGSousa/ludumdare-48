@@ -20,7 +20,7 @@ public class DepthBehaviour : MonoBehaviour {
     }
     public DepthLayer[] layers;
 
-    DepthLayer getLayerAt(int depth) {
+    public DepthLayer getLayerAt(int depth) {
         foreach(DepthLayer layer in layers) {
             depth -= layer.span;
             if(depth < 0)
@@ -28,6 +28,17 @@ public class DepthBehaviour : MonoBehaviour {
         }
 
         return null;
+    }
+
+    public Vector2 getMinMaxDepth(DepthLayer layer) {
+        int minDepth = 0;
+        foreach(DepthLayer l in layers) {
+            if(l != layer)
+                minDepth += l.span;
+            else
+                break;
+        }
+        return new Vector2(minDepth, minDepth + layer.span);
     }
     
 }
