@@ -6,7 +6,6 @@ using UnityEngine;
 public class Submarine : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float thrust = 1f;
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] float linearDrag = 5f;
