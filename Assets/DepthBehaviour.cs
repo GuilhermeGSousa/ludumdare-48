@@ -51,13 +51,16 @@ public class DepthBehaviour : MonoBehaviour {
 
     public Vector2 getMinMaxDepth(DepthLayer layer) {
         int minDepth = 0;
-        foreach(DepthLayer l in layers) {
-            if(l != layer)
-                minDepth += l.span;
-            else
-                break;
+        if(layer != null) {
+            foreach(DepthLayer l in layers) {
+                if(l != layer)
+                    minDepth += l.span;
+                else
+                    break;
+            }
+            return new Vector2(minDepth, minDepth + layer.span);
         }
-        return new Vector2(minDepth, minDepth + layer.span);
+        return new Vector2(minDepth, minDepth);
     }
     
 }
