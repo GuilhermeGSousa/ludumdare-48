@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UI
   - Bounds
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1112265421
+    locked: 0
+  - name: Note
+    uniqueID: 3282526325
     locked: 0
