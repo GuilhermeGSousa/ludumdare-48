@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layers:
   - span: 40
-    name: Surface
+    name: 0
   - span: 150
-    name: DeepSea
+    name: 2
+  - span: 150
+    name: 0
