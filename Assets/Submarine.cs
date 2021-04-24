@@ -10,20 +10,33 @@ public class Submarine : MonoBehaviour
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] float linearDrag = 5f;
 
+    [SerializeField] float inclinationSpeed = 1.0f;
+    [SerializeField] Vector2 minMaxAngles = new Vector2(-7.0f, 7.0f);
+
     [Header("Lights")]
     [SerializeField] Transform frontLight;
 
     Vector2 controlDirection;
     Vector3 mousePosition;
     Camera mainCamera;
-    bool isFlipped = false;
     Rigidbody2D rb2d;
+
+    private Animator animator;
+
+    bool isTurnedLeft = false;
+
+    float currentAngle = 0.0f;
+
+    float inclinationT = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D> ();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -67,6 +80,29 @@ public class Submarine : MonoBehaviour
         rb2d.AddForce(Vector2.right * thrust * controlDirection.x);
         rb2d.AddForce(Vector2.up * thrust * controlDirection.y);
 
+        float target = 0.0f;
+
+        if (controlDirection.y < 0 ) {
+            inclinationT += Time.deltaTime;
+            if (isTurnedLeft)
+                target = minMaxAngles.y;
+            else 
+                target = minMaxAngles.x;
+        }
+        else if  (controlDirection.y > 0 ) {
+            inclinationT += Time.deltaTime;
+            if (isTurnedLeft)
+                target = minMaxAngles.x;
+            else
+                target = minMaxAngles.y;
+        }
+        else
+            inclinationT = 0.0f;
+
+        currentAngle = Mathf.Lerp(currentAngle, target, inclinationT * inclinationSpeed);
+
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+
         if(controlDirection.magnitude > 0.2f)
         {
             rb2d.drag = 0.0f;
@@ -76,15 +112,14 @@ public class Submarine : MonoBehaviour
             rb2d.drag = linearDrag;
         }
 
-        if((controlDirection.x > 0 && isFlipped) || (controlDirection.x < 0 && !isFlipped))
+        if(controlDirection.x > 0 && isTurnedLeft)
         {
-            Flip();
+            isTurnedLeft = false;
+            animator.SetTrigger("TurnRight");
         }
-    }
-
-    public void Flip()
-    {
-        isFlipped = !isFlipped;
-        transform.rotation = Quaternion.Euler(0f, isFlipped ? 180f : 0f, 0f);
+        else if  (controlDirection.x < 0 && !isTurnedLeft) {
+            isTurnedLeft = true;
+            animator.SetTrigger("TurnLeft");
+        }
     }
 }
