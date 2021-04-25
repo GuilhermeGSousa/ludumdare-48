@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5706400773763731163}
   - component: {fileID: 5706400773763731156}
+  - component: {fileID: 5048781081367452659}
   m_Layer: 0
   m_Name: conic light
   m_TagString: FlashLights
@@ -72,6 +73,21 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5048781081367452659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706400773763731162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b0e4fa78c38634ca85b95c5b6cfbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probe: {fileID: 4049802704728300280, guid: 5f5cdebaa7867bf4bb464bf4d654b2f8, type: 3}
+  totalProbeCooldownTime: 20
+  probeBar: {fileID: 0}
 --- !u!1 &5706400774453487784
 GameObject:
   m_ObjectHideFlags: 0
