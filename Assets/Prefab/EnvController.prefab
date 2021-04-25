@@ -46,7 +46,11 @@ MonoBehaviour:
   layers:
   - span: 40
     name: 0
-  - span: 150
+  - span: 40
+    name: 1
+  - span: 100
     name: 2
-  - span: 150
-    name: 0
+  - span: 200
+    name: 3
+  - span: 5
+    name: 4

@@ -34,6 +34,7 @@ public class FishBehaviour : MonoBehaviour
     Rigidbody2D rb2d;
     Collider2D bounds;
     CircleCollider2D closeArea;
+    public Vector2 minMaxDepth;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class FishBehaviour : MonoBehaviour
         DepthLayerNames layerName = predilectionLayers[rand];
         DepthLayer spawningLayer = DepthBehaviour.instance.getLayerNamed(layerName);
 
-        Vector2 minMaxDepth = DepthBehaviour.instance.getMinMaxDepth(spawningLayer);
+        minMaxDepth = DepthBehaviour.instance.getMinMaxDepth(spawningLayer);
         int y = Random.Range((int)minMaxDepth[0], (int)minMaxDepth[1]);
 
         bounds = GameObject.FindGameObjectWithTag("Bounds").GetComponent<Collider2D>();
