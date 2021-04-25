@@ -7,6 +7,8 @@ public enum DepthLayerNames // your custom enumeration
     Surface, 
     CoralArea, 
     DeepSea,
+
+    DeepWaterMaze,
     Abysses,
     Ground
  };

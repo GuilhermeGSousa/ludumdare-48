@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomBehavior : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class RoomBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Image sr = GetComponent<Image>();
         if(Fixed)
         {
             sr.color = whenFixed;
@@ -26,7 +27,7 @@ public class RoomBehavior : MonoBehaviour
         }
     }
 
-    private void OnMouseDown() {
+    public void GoToRoom() {
         // TODO start minigame
         Fixed = ! Fixed;
     }

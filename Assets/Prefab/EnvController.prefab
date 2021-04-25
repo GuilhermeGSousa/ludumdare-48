@@ -44,9 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layers:
+  - span: 20
+    name: 0
   - span: 40
-    name: 0
-  - span: 150
+    name: 1
+  - span: 105
     name: 2
-  - span: 150
-    name: 0
+  - span: 105
+    name: 3
+  - span: 243
+    name: 4
+  - span: 5
+    name: 5
