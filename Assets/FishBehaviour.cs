@@ -163,7 +163,7 @@ public class FishBehaviour : MonoBehaviour
 
                 direction = Vector2.SignedAngle(forwardVector, escapeDirection);
                 boostedSpeed = scaredSpeed;
-                Debug.Log("Fish : "+type+" was scared at : "+escapeDirection * scaredSpeed*speedAnimationFactor);
+                // Debug.Log("Fish : "+type+" was scared at : "+escapeDirection * scaredSpeed*speedAnimationFactor);
             }
         }
     }
