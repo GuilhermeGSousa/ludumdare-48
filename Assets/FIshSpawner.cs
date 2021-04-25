@@ -11,6 +11,7 @@ public class FishesInfos {
 
 public class FIshSpawner : MonoBehaviour
 {
+    public GameObject net;
     public List<FishesInfos> Fishes = new List<FishesInfos>();
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class FIshSpawner : MonoBehaviour
             {
                 GameObject newfish = Instantiate(fishinfos.prefab, new Vector3(0, 0, 0), Quaternion.identity);
                 newfish.SetActive(true);
+                newfish.transform.SetParent(net.transform);
             }
         }
     }

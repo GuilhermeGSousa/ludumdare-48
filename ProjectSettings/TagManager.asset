@@ -9,6 +9,7 @@ TagManager:
   - Fish
   - PointsLight
   - FlashLights
+  - Net
   layers:
   - Default
   - TransparentFX
