@@ -9,6 +9,7 @@ public class ProbeGun : MonoBehaviour
     [SerializeField] float totalProbeCooldownTime = 20;
     [SerializeField] ProgressBar probeBar;
     float timeSinceLastProbe = 0;
+    public GameObject probeNet;
     void Start()
     {
         
@@ -24,7 +25,8 @@ public class ProbeGun : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && timeSinceLastProbe > totalProbeCooldownTime)
         {
-            Instantiate(probe, transform.position, transform.rotation);
+            GameObject probeInstance = Instantiate(probe, transform.position, transform.rotation);
+            probeInstance.transform.SetParent(probeNet.transform);
             timeSinceLastProbe = 0;
         }
 

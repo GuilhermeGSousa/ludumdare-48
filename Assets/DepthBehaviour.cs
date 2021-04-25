@@ -50,7 +50,6 @@ public class DepthBehaviour : MonoBehaviour {
         else
             Destroy (gameObject);
 
-        DontDestroyOnLoad(gameObject);
         Init();
     }
 

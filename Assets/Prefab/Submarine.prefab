@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5706400773763731163}
   - component: {fileID: 5706400773763731156}
+  - component: {fileID: 5048781081367452659}
   m_Layer: 3
   m_Name: conic light
   m_TagString: FlashLights
@@ -85,8 +86,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probe: {fileID: 4049802704728300280, guid: 5f5cdebaa7867bf4bb464bf4d654b2f8, type: 3}
-  totalProbeCooldownTime: 20
+  totalProbeCooldownTime: 10
   probeBar: {fileID: 0}
+  probeNet: {fileID: 0}
 --- !u!1 &5706400774453487784
 GameObject:
   m_ObjectHideFlags: 0

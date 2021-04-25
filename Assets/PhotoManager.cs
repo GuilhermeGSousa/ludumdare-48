@@ -11,7 +11,6 @@ public class PhotoManager : MonoBehaviour {
         else
             Destroy (gameObject);
 
-        DontDestroyOnLoad(gameObject);
     }
 
     List<FishBehaviour.FishType> types = new List<FishBehaviour.FishType>();

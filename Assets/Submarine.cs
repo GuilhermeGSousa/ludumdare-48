@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Submarine : MonoBehaviour
 {
+    public static Submarine instance = null;
     [Header("Movement")]
     [SerializeField] float thrust = 1f;
     [SerializeField] float maxSpeed = 5f;
@@ -38,6 +39,11 @@ public class Submarine : MonoBehaviour
     float inclinationT = 0.0f;
     bool pictureAxis = false;
 
+    private void Awake() {
+        if(instance == null) instance = this;
+        else
+            Destroy (gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
