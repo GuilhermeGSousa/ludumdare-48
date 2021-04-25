@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UI
   - Bounds
+  - Fish
   layers:
   - Default
   - TransparentFX

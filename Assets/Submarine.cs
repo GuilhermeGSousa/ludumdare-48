@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Submarine : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class Submarine : MonoBehaviour
     [Header("Lights")]
     [SerializeField] Transform frontLight;
 
+    [Header("Tools")]
+    [SerializeField] float totalOxigenTime = 120;
+
+    [Header("UI")]
+    [SerializeField] OxygenBar oxygenBar;
+    float currentOxigenTime;
     Vector2 controlDirection;
     Vector3 mousePosition;
     Camera mainCamera;
@@ -35,7 +42,7 @@ public class Submarine : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D> ();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-
+        currentOxigenTime = totalOxigenTime;
         animator = GetComponent<Animator>();
     }
 
@@ -44,8 +51,32 @@ public class Submarine : MonoBehaviour
     {
         GetInput();
         Move();
+        UpdateOxygen();
         UpdateLights();
         ModifyPhysics();
+    }
+
+    public void ResetOxygen()
+    {
+        currentOxigenTime = totalOxigenTime;
+    }
+
+    private void UpdateOxygen()
+    {
+        currentOxigenTime -= Time.deltaTime;
+
+        oxygenBar.SetOxygen(currentOxigenTime / totalOxigenTime);
+
+        if(currentOxigenTime <= 0)
+        {
+            OnDeath();
+        }
+    }
+
+    private void OnDeath()
+    {
+        Debug.Log("U ded");
+        SceneManager.LoadScene("EndGame");
     }
 
     private void UpdateLights()
