@@ -13,7 +13,7 @@ public class FishBehaviour : MonoBehaviour
         Kraken
     };
 
-    [SerializeField] FishType type;
+    [SerializeField] public FishType type;
     [SerializeField] DepthLayerNames[] predilectionLayers;
     [SerializeField] float speed = 1.0f;
     [SerializeField] float scaredSpeed = 5.0f;

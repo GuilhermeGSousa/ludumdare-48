@@ -20,6 +20,7 @@ public class Submarine : MonoBehaviour
     Vector3 mousePosition;
     Camera mainCamera;
     Rigidbody2D rb2d;
+    GameObject photoZone = null;
 
     private Animator animator;
 
@@ -28,6 +29,7 @@ public class Submarine : MonoBehaviour
     float currentAngle = 0.0f;
 
     float inclinationT = 0.0f;
+    bool pictureAxis = false;
 
 
     // Start is called before the first frame update
@@ -37,6 +39,8 @@ public class Submarine : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         animator = GetComponent<Animator>();
+
+        photoZone = transform.Find("PhotoZone").gameObject;
     }
 
     // Update is called once per frame
@@ -46,6 +50,11 @@ public class Submarine : MonoBehaviour
         Move();
         UpdateLights();
         ModifyPhysics();
+
+        if (pictureAxis) {
+            pictureAxis = false;
+            TryToTakePicture();
+        }
     }
 
     private void UpdateLights()
@@ -67,6 +76,7 @@ public class Submarine : MonoBehaviour
     private void GetInput()
     {
         controlDirection = new Vector2(Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
+        pictureAxis = Input.GetKeyDown(KeyCode.Return);
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
@@ -120,6 +130,18 @@ public class Submarine : MonoBehaviour
         else if  (controlDirection.x < 0 && !isTurnedLeft) {
             isTurnedLeft = true;
             animator.SetTrigger("TurnLeft");
+        }
+    }
+
+    void TryToTakePicture() {
+        GameObject[] fishes = GameObject.FindGameObjectsWithTag("Fish");
+
+        foreach(GameObject fish in fishes) {
+            if ((fish.transform.position - photoZone.transform.position).magnitude < photoZone.transform.lossyScale.x) {
+                FishBehaviour fishB = fish.GetComponent<FishBehaviour>();
+                PhotoManager.instance.TrytoAdd(fishB.type);
+                break;
+            }
         }
     }
 }
