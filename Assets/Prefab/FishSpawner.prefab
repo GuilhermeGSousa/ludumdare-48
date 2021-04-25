@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fishes:
-  - number: 2
-    prefab: {fileID: 0}
   - number: 10
-    prefab: {fileID: 0}
+    prefab: {fileID: 6983097824022347102, guid: 1798f75bdd9e53d4ca0ebe5b2e6d0ba0, type: 3}
+  - number: 15
+    prefab: {fileID: 8902998660394626764, guid: c6eff9344bc761640b16f19c9289393e, type: 3}
+  - number: 30
+    prefab: {fileID: 9141639137551107192, guid: f026b92691d4929428e6bd17bdcb62b8, type: 3}

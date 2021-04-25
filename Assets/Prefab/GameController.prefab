@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5009892481783729899
+--- !u!1 &6964213246787944869
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,55 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5009892481783729893}
-  - component: {fileID: 5009892481783729892}
+  - component: {fileID: 6964213246787944868}
+  - component: {fileID: 6964213246787944871}
   m_Layer: 0
-  m_Name: EnvController
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5009892481783729893
+--- !u!4 &6964213246787944868
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5009892481783729899}
+  m_GameObject: {fileID: 6964213246787944869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 31.416077, y: -98.55732, z: -70.54872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5009892481783729892
+--- !u!114 &6964213246787944871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5009892481783729899}
+  m_GameObject: {fileID: 6964213246787944869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5686849ff2500e54c8134d822d87eb42, type: 3}
+  m_Script: {fileID: 11500000, guid: 4415c4e51295cbc41b526d4f12ba2cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layers:
-  - span: 20
-    name: 0
-  - span: 40
-    name: 1
-  - span: 105
-    name: 2
-  - span: 105
-    name: 3
-  - span: 243
-    name: 4
-  - span: 5
-    name: 5
-  maxPointLightIntensity: 2.04
-  maxFlahsLightIntensity: 2.95
-  noLightDepth: 175
-  globalLight: {fileID: 0}
+  photoBook: {fileID: 2013302630427230716, guid: 8e4ef599b2ff1c14a860c3d5d26e9c68, type: 3}
