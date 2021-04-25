@@ -9,8 +9,12 @@ public class Activator : MonoBehaviour
     bool active = false;
     GameObject note;
     Color old;
+    public bool checkSyncMode;
 
-    public int score;
+    private int score;
+    private AudioSource tickSound;
+
+    private float pos_x_activator;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,13 +26,22 @@ public class Activator : MonoBehaviour
     {
         old = sr.color;
         score = 0;
+        tickSound = GetComponent<AudioSource>(); // For testing synchronization
+        pos_x_activator = GetComponent<Transform>().position.x;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(key))
+        if (checkSyncMode && active)
+        {
+            if (Mathf.Abs((float)(note.transform.position.x - (pos_x_activator))) < 0.1)
+            {
+                tickSound.Play();
+            }
+        }
+        else if(Input.GetKeyDown(key))
         {
             StartCoroutine(Pressed());
             if(active)
