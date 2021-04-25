@@ -16,20 +16,27 @@ public class FishBehaviour : MonoBehaviour
     [SerializeField] public FishType type;
     [SerializeField] DepthLayerNames[] predilectionLayers;
     [SerializeField] float speed = 1.0f;
+
+    [SerializeField] float speedAnimationFactor = 1.0f;
     [SerializeField] float scaredSpeed = 5.0f;
     [SerializeField] float direction = 0.0f;
     [SerializeField] float rotationSpeed = 1.0f;
     [SerializeField] bool doFlips = false;
     [SerializeField] bool isFlipped = false;
-    [SerializeField] float maxSpeed = 0.5f;
+    [SerializeField] float maxSpeed = 5.0f;
     [SerializeField] float submarineMinSpeed = 1f;
+
+    public float minTimeChangeDirection = 2.0f;
+    public float maxTimeChangeDirection =5.0f;
     float currentDirection = 0.0f;
     float inclinationT = 0.0f;
     public Vector2 forwardVector = Vector2.right;
     float previousDirection = 0.0f;
-    float previousSpeed = 0.0f;
+    float boostedSpeed = 0.0f;
     bool canChooseDirection = true;
     float newDirectionTime;
+
+
 
     Rigidbody2D rb2d;
     Collider2D bounds;
@@ -44,7 +51,7 @@ public class FishBehaviour : MonoBehaviour
         DepthLayer spawningLayer = DepthBehaviour.instance.getLayerNamed(layerName);
 
         minMaxDepth = DepthBehaviour.instance.getMinMaxDepth(spawningLayer);
-        int y = Random.Range((int)minMaxDepth[0], (int)minMaxDepth[1]);
+        int y = Random.Range((int)minMaxDepth.x, (int)minMaxDepth.y);
 
         bounds = GameObject.FindGameObjectWithTag("Bounds").GetComponent<Collider2D>();
         float x = Random.Range(bounds.bounds.min.x, bounds.bounds.max.x);
@@ -59,7 +66,7 @@ public class FishBehaviour : MonoBehaviour
     void Update()
     {
         ModifyPhysics();
-
+        float currentSpeed = (speed+boostedSpeed) * speedAnimationFactor;
         if(canChooseDirection)
             StartCoroutine("ChooseDirection");
 
@@ -80,18 +87,18 @@ public class FishBehaviour : MonoBehaviour
                 Flip();
             }
 
-            rb2d.AddRelativeForce(Quaternion.Euler(0, 0, currentDirection) * forwardVector*speed );
+            rb2d.AddRelativeForce(Quaternion.Euler(0, 0, currentDirection) * forwardVector*currentSpeed );
         }
         else 
         { 
             //Smooth rotation
             transform.rotation = Quaternion.Euler(0, 0, currentDirection);
 
-            rb2d.AddRelativeForce(forwardVector*speed );
+            rb2d.AddRelativeForce(forwardVector*currentSpeed );
         }
 
         previousDirection = currentDirection;
-        previousSpeed = speed;
+        boostedSpeed = 0.0f;
     }
 
     private void CorrectDirectionToBounds()
@@ -107,11 +114,11 @@ public class FishBehaviour : MonoBehaviour
             correctedDirection += Vector2.left;
         }
 
-        if(transform.position.y < bounds.bounds.min.y)
+        if(transform.position.y < -minMaxDepth.y)
         {
             correctedDirection += Vector2.up;
         }
-        else if(transform.position.y > bounds.bounds.max.y)
+        else if(transform.position.y > -minMaxDepth.x)
         {
             correctedDirection += Vector2.down;
         }
@@ -138,24 +145,25 @@ public class FishBehaviour : MonoBehaviour
         rb2d.velocity = rb2d.velocity * 0.8f;
         canChooseDirection = false;
         direction =  Random.Range(0, 360);
-        newDirectionTime = Random.Range(2, 5);
+        newDirectionTime = Random.Range(minTimeChangeDirection, maxTimeChangeDirection);
         yield return new WaitForSeconds(newDirectionTime);
         canChooseDirection = true;
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(scaredSpeed != 0  && other.gameObject.CompareTag("Player"))
         {
             Rigidbody2D submarine = other.gameObject.GetComponent<Rigidbody2D>();
             
             if(submarine.velocity.magnitude > submarineMinSpeed)
             {
-                Vector2 escapeDirection = transform.position - other.gameObject.transform.position;
+                // multiply by scared speed to make negative scared speed make follow / attack
+                Vector2 escapeDirection =(transform.position - other.gameObject.transform.position)*scaredSpeed;
 
                 direction = Vector2.SignedAngle(forwardVector, escapeDirection);
-
-                rb2d.AddForce(escapeDirection * scaredSpeed);
+                boostedSpeed = scaredSpeed;
+                Debug.Log("Fish : "+type+" was scared at : "+escapeDirection * scaredSpeed*speedAnimationFactor);
             }
         }
     }
