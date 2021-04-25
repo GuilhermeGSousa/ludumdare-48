@@ -6,14 +6,15 @@ TagManager:
   tags:
   - UI
   - Bounds
+  - Fish
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Submarine
   - Water
   - UI
-  - 
+  - PhotoView
   - 
   - 
   - 
