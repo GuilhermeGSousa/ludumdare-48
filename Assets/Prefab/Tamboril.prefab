@@ -59,7 +59,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.72
-  m_PointLightOuterRadius: 0.96
+  m_PointLightOuterRadius: 0.72
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -127,7 +127,7 @@ MonoBehaviour:
   rotationSpeed: 1
   doFlips: 0
   isFlipped: 0
-  maxSpeed: 0.5
+  maxSpeed: 5
   submarineMinSpeed: 1
   forwardVector: {x: 1, y: 0}
   minMaxDepth: {x: 0, y: 0}

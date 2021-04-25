@@ -209,13 +209,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   predilectionLayers: 0300000004000000
-  speed: 0
-  scaredSpeed: 1
+  speed: 5
+  speedAnimationFactor: 1
+  scaredSpeed: -1
   direction: 0
   rotationSpeed: 1
   doFlips: 0
   isFlipped: 0
   maxSpeed: 3
   submarineMinSpeed: 1
+  minTimeChangeDirection: 2
+  maxTimeChangeDirection: 5
   forwardVector: {x: 1, y: 0}
   minMaxDepth: {x: 0, y: 0}
