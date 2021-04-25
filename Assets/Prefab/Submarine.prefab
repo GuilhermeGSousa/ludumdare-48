@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5706400773763731163}
   - component: {fileID: 5706400773763731156}
-  m_Layer: 3
-  m_Name: Point Light 2D
-  m_TagString: Untagged
+  m_Layer: 0
+  m_Name: conic light
+  m_TagString: FlashLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,21 +45,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.446
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_FalloffIntensity: 0.622
+  m_Color: {r: 0.9811321, g: 0.9670253, b: 0.5322179, a: 1}
+  m_Intensity: 2.95
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: d3e8f678
+  m_ApplyToSortingLayers: afe8e89a00000000d3e8f6788339a998
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 13
-  m_PointLightOuterAngle: 33
+  m_PointLightInnerAngle: 24.09
+  m_PointLightOuterAngle: 57
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.859526
+  m_PointLightOuterRadius: 30.11
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -82,9 +82,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5706400774453487785}
   - component: {fileID: 5706400774453487786}
-  m_Layer: 3
-  m_Name: Point Light 2D (1)
-  m_TagString: Untagged
+  m_Layer: 0
+  m_Name: internal light
+  m_TagString: PointsLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,11 +117,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.307
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_FalloffIntensity: 1
+  m_Color: {r: 1, g: 0.9799817, b: 0.6933962, a: 1}
+  m_Intensity: 2.04
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: d3e8f678
+  m_ApplyToSortingLayers: afe8e89a00000000d3e8f6788339a9980f619afa
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.984953
+  m_PointLightOuterRadius: 24.05
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -174,7 +174,7 @@ Transform:
   m_GameObject: {fileID: 5706400774624450583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.32, y: 0.62, z: 0}
-  m_LocalScale: {x: 4.3807, y: 4.3807, z: 4.3807}
+  m_LocalScale: {x: 9.114485, y: 11.226858, z: 4.3807}
   m_Children:
   - {fileID: 5706400773763731163}
   - {fileID: 5706400774453487785}
@@ -221,7 +221,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2029447379
+  m_SortingLayerID: -90545905
   m_SortingLayer: 2
   m_SortingOrder: 47
   m_Sprite: {fileID: -2809879573821749140, guid: 06d6baeeeaeaa17438d2262b752f3fd5, type: 3}
@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e1aefbf6ff3c64ebc530faf166afcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2
-  maxSpeed: 3
+  thrust: 10
+  maxSpeed: 20
   linearDrag: 1
   inclinationSpeed: 0.2
   minMaxAngles: {x: -7, y: 7}
@@ -287,7 +287,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0025529265, y: 0.0051058084}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -298,7 +298,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.87652326, y: 0.1872313}
   m_EdgeRadius: 0
 --- !u!95 &2689172559016294420
 Animator:
@@ -557,7 +557,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8104539983392089201}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -632,7 +632,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -685,7 +685,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1117,7 +1117,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10
+    maxNumParticles: 20
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5294,7 +5294,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2029447379
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 10
   m_RenderMode: 0
   m_SortMode: 0

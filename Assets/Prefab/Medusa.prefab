@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5152946033169371824}
   m_Layer: 0
   m_Name: Point Light 2D
-  m_TagString: Untagged
+  m_TagString: PointsLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,8 +58,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.12
-  m_PointLightOuterRadius: 0.72
+  m_PointLightInnerRadius: 0.84
+  m_PointLightOuterRadius: 1.53
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -169,8 +169,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2029447379
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -6422575121423821414, guid: 044e2bc3e413c3e4c8e1b52878a7258a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

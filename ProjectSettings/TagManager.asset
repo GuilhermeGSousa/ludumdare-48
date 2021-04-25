@@ -7,6 +7,8 @@ TagManager:
   - UI
   - Bounds
   - Fish
+  - PointsLight
+  - FlashLights
   layers:
   - Default
   - TransparentFX
@@ -41,14 +43,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2598955183
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Midground
     uniqueID: 2029447379
+    locked: 0
+  - name: Player
+    uniqueID: 4204421391
+    locked: 0
+  - name: Level
+    uniqueID: 2561227139
     locked: 0
   - name: Foreground
     uniqueID: 1112265421
