@@ -13,11 +13,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Submarine
+  - Player
   - Water
   - UI
+  - Decor
   - PhotoView
-  - 
   - 
   - 
   - 
