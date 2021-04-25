@@ -10,6 +10,8 @@ public class Activator : MonoBehaviour
     GameObject note;
     Color old;
 
+    public int score;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +21,7 @@ public class Activator : MonoBehaviour
     void Start()
     {
         old = sr.color;
+        score = 0;
     }
 
 
@@ -31,6 +34,8 @@ public class Activator : MonoBehaviour
             if(active)
             {
                 Destroy(note);
+                AddScore();
+                active = false;
             }
         }
     }
@@ -45,6 +50,11 @@ public class Activator : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         active = false;
+    }
+
+    void AddScore()
+    {
+        score += 100;
     }
 
     IEnumerator Pressed()
