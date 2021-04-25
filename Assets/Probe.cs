@@ -31,6 +31,7 @@ public class Probe : MonoBehaviour
             hasCollided = true;
             rb2d.isKinematic = true;
             rb2d.velocity = Vector2.zero;
+            rb2d.angularVelocity = 0;
             
         }
 

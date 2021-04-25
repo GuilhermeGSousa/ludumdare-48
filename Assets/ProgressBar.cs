@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProgressBar : MonoBehaviour
+public class OxygenBar : MonoBehaviour
 {
     public Slider slider;
 
     // Start is called before the first frame update
-    public void SetProgress(float oxygenPercentage)
+    public void SetOxygen(float percentage)
     {
-        slider.value = oxygenPercentage;
+        slider.value = percentage;
     }
 }

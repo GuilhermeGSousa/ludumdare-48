@@ -21,7 +21,7 @@ public class Submarine : MonoBehaviour
     [SerializeField] float totalOxigenTime = 120;
 
     [Header("UI")]
-    [SerializeField] OxygenBar oxygenBar;
+    [SerializeField] ProgressBar oxygenBar;
     float currentOxigenTime;
     Vector2 controlDirection;
     Vector3 mousePosition;
@@ -43,12 +43,14 @@ public class Submarine : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D> ();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         currentOxigenTime = totalOxigenTime;
+
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         GetInput();
         Move();
         UpdateOxygen();
@@ -65,7 +67,7 @@ public class Submarine : MonoBehaviour
     {
         currentOxigenTime -= Time.deltaTime;
 
-        oxygenBar.SetOxygen(currentOxigenTime / totalOxigenTime);
+        oxygenBar.SetProgress(currentOxigenTime / totalOxigenTime);
 
         if(currentOxigenTime <= 0)
         {

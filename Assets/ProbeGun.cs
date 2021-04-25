@@ -6,6 +6,9 @@ public class ProbeGun : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject probe;
+    [SerializeField] float totalProbeCooldownTime = 20;
+    [SerializeField] ProgressBar probeBar;
+    float timeSinceLastProbe = 0;
     void Start()
     {
         
@@ -14,9 +17,16 @@ public class ProbeGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(timeSinceLastProbe <= totalProbeCooldownTime)
+            timeSinceLastProbe += Time.deltaTime;
+
+        probeBar.SetProgress(timeSinceLastProbe / totalProbeCooldownTime);
+
+        if(Input.GetMouseButtonDown(0) && timeSinceLastProbe > totalProbeCooldownTime)
         {
             Instantiate(probe, transform.position, transform.rotation);
+            timeSinceLastProbe = 0;
         }
+
     }
 }
