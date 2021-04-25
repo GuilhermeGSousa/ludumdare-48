@@ -80,6 +80,15 @@ public class Submarine : MonoBehaviour
         rb2d.AddForce(Vector2.right * thrust * controlDirection.x);
         rb2d.AddForce(Vector2.up * thrust * controlDirection.y);
 
+        if(controlDirection.magnitude > 0.2f)
+        {
+            rb2d.drag = 0.0f;
+        }
+        else
+        {
+            rb2d.drag = linearDrag;
+        }
+
         float target = 0.0f;
 
         if (controlDirection.y < 0 ) {
@@ -102,15 +111,6 @@ public class Submarine : MonoBehaviour
         currentAngle = Mathf.Lerp(currentAngle, target, inclinationT * inclinationSpeed);
 
         gameObject.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
-
-        if(controlDirection.magnitude > 0.2f)
-        {
-            rb2d.drag = 0.0f;
-        }
-        else
-        {
-            rb2d.drag = linearDrag;
-        }
 
         if(controlDirection.x > 0 && isTurnedLeft)
         {
