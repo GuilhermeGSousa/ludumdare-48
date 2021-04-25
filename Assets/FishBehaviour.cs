@@ -25,7 +25,7 @@ public class FishBehaviour : MonoBehaviour
     [SerializeField] float submarineMinSpeed = 1f;
     float currentDirection = 0.0f;
     float inclinationT = 0.0f;
-
+    public Vector2 forwardVector = Vector2.right;
     float previousDirection = 0.0f;
     float previousSpeed = 0.0f;
     bool canChooseDirection = true;
@@ -49,7 +49,7 @@ public class FishBehaviour : MonoBehaviour
         bounds = GameObject.FindGameObjectWithTag("Bounds").GetComponent<Collider2D>();
         float x = Random.Range(bounds.bounds.min.x, bounds.bounds.max.x);
 
-        //gameObject.transform.position = new Vector2(x, -y);
+        gameObject.transform.position = new Vector2(x, -y);
 
         rb2d = GetComponent<Rigidbody2D> ();
         closeArea = GetComponent<CircleCollider2D>();
@@ -80,14 +80,14 @@ public class FishBehaviour : MonoBehaviour
                 Flip();
             }
 
-            rb2d.AddRelativeForce(Quaternion.Euler(0, 0, currentDirection) * new Vector2(speed, 0.0f) );
+            rb2d.AddRelativeForce(Quaternion.Euler(0, 0, currentDirection) * forwardVector*speed );
         }
         else 
         { 
             //Smooth rotation
             transform.rotation = Quaternion.Euler(0, 0, currentDirection);
 
-            rb2d.AddRelativeForce(new Vector2(speed, 0.0f) );
+            rb2d.AddRelativeForce(forwardVector*speed );
         }
 
         previousDirection = currentDirection;
@@ -102,23 +102,22 @@ public class FishBehaviour : MonoBehaviour
         {
             correctedDirection += Vector2.right;
         }
-        else if(transform.position.x > bounds.bounds.max.y)
+        else if(transform.position.x > bounds.bounds.max.x)
         {
             correctedDirection += Vector2.left;
         }
 
         if(transform.position.y < bounds.bounds.min.y)
         {
-            correctedDirection += Vector2.down;
+            correctedDirection += Vector2.up;
         }
         else if(transform.position.y > bounds.bounds.max.y)
         {
-            correctedDirection += Vector2.up;
+            correctedDirection += Vector2.down;
         }
-
         if(correctedDirection != Vector2.zero)
         {
-            direction = Vector2.Angle(Vector2.right, correctedDirection);
+            direction = Vector2.SignedAngle(forwardVector, correctedDirection);
         }
     }
 
@@ -154,7 +153,7 @@ public class FishBehaviour : MonoBehaviour
             {
                 Vector2 escapeDirection = transform.position - other.gameObject.transform.position;
 
-                direction = Vector2.Angle(Vector2.right, escapeDirection);
+                direction = Vector2.SignedAngle(forwardVector, escapeDirection);
 
                 rb2d.AddForce(escapeDirection * scaredSpeed);
             }

@@ -3011,6 +3011,10 @@ PrefabInstance:
       value: 0.0051058084
       objectReference: {fileID: 0}
     - target: {fileID: 5706400774624450578, guid: 55e430001eb117c4cadd86030c8d6973, type: 3}
+      propertyPath: thrust
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706400774624450578, guid: 55e430001eb117c4cadd86030c8d6973, type: 3}
       propertyPath: maxSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -3341,7 +3345,7 @@ GameObject:
   - component: {fileID: 1011130507}
   m_Layer: 0
   m_Name: World Bounds
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5542,6 +5546,18 @@ PrefabInstance:
     - target: {fileID: 6707181003636983438, guid: 06e07a239311f1a4daf023334acda752, type: 3}
       propertyPath: m_Name
       value: FishSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
+      propertyPath: Fishes.Array.data[0].number
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
+      propertyPath: Fishes.Array.data[1].number
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
+      propertyPath: Fishes.Array.data[2].number
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e07a239311f1a4daf023334acda752, type: 3}
