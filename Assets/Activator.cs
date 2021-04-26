@@ -18,7 +18,8 @@ public class Activator : MonoBehaviour
     Color old;
     public bool checkSyncMode;
 
-    public int score;
+    public int score = 0; // TODO: remove public
+    public int score_increment = 0; // TODO: remove public
     private AudioSource tickSound;
 
     private float pos_x_activator;
@@ -33,7 +34,7 @@ public class Activator : MonoBehaviour
     {
         gm = GameObject.Find("MiniGamePropelleGameManager");
         old = sr.color;
-        score = 0;
+
         tickSound = GetComponent<AudioSource>(); // For testing synchronization
         pos_x_activator = GetComponent<Transform>().position.x;
     }
@@ -111,7 +112,9 @@ public class Activator : MonoBehaviour
 
     void AddScore()
     {
-        score += gm.GetComponent<MiniGamePropelleGameManager>().GetScore();
+        score = PlayerPrefs.GetInt("Score");
+        score_increment = gm.GetComponent<MiniGamePropelleGameManager>().GetScore();
+        PlayerPrefs.SetInt("Score", score + score_increment);
     }
 
     IEnumerator Pressed()

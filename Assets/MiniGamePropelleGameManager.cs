@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class MiniGamePropelleGameManager : MonoBehaviour
 {
-    public int multiplier;
-    public int streak;
+    int multiplier;
+    int streak;
     int points = 100;
+
+    private int needle_current;
+    public int max_needle_shift;
 
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.SetInt("RockMeter", 0);
+        PlayerPrefs.SetInt("RockMeterMax", max_needle_shift);
         multiplier = 1;
         streak = 0;
     }
@@ -21,8 +27,26 @@ public class MiniGamePropelleGameManager : MonoBehaviour
         
     }
 
+    void Win()
+    {
+    }
+
+    void Lose()
+    {
+    }
+
     public void AddStreak()
     {
+        needle_current = PlayerPrefs.GetInt("RockMeter");
+        if (needle_current < max_needle_shift)
+        {
+            PlayerPrefs.SetInt("RockMeter", needle_current + 1);
+        }
+        else
+        {
+            Win();
+        }
+
         streak++;
         if (streak >= 20)
         {
@@ -44,6 +68,16 @@ public class MiniGamePropelleGameManager : MonoBehaviour
 
     public void ResetStreak()
     {
+        needle_current = PlayerPrefs.GetInt("RockMeter");
+        if (needle_current > -max_needle_shift)
+        {
+            PlayerPrefs.SetInt("RockMeter", needle_current - 2);
+        }
+        else
+        {
+            Lose();
+        }
+
         streak = 0;
         multiplier = 1;
     }
