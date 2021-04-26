@@ -171,7 +171,7 @@ public class Submarine : MonoBehaviour
         }
     }
 
-    void TryToTakePicture() {
+    public void TryToTakePicture() {
         GameObject[] fishes = GameObject.FindGameObjectsWithTag("Fish");
 
         foreach(GameObject fish in fishes) {
