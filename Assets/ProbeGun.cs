@@ -34,7 +34,6 @@ public class ProbeGun : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shoot");
         if (canshoot)
         {
             GameObject probeInstance = Instantiate(probe, transform.position, transform.rotation);
