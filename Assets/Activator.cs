@@ -14,11 +14,11 @@ public class Activator : MonoBehaviour
     public KeyCode key_bot;
     public KeyCode key_rgt;
     bool active = false;
-    GameObject note;
+    GameObject note, gm;
     Color old;
     public bool checkSyncMode;
 
-    private int score;
+    public int score;
     private AudioSource tickSound;
 
     private float pos_x_activator;
@@ -31,6 +31,7 @@ public class Activator : MonoBehaviour
 
     void Start()
     {
+        gm = GameObject.Find("MiniGamePropelleGameManager");
         old = sr.color;
         score = 0;
         tickSound = GetComponent<AudioSource>(); // For testing synchronization
@@ -84,7 +85,7 @@ public class Activator : MonoBehaviour
 
     void AddScore()
     {
-        score += 100;
+        score += gm.GetComponent<MiniGamePropelleGameManager>().GetScore();
     }
 
     IEnumerator Pressed()
