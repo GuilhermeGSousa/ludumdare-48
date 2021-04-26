@@ -17,7 +17,6 @@ public class PhotoManager : MonoBehaviour {
     }
 
     private void Start() {
-        checkEndGame();
     }
 
     public List<FishBehaviour.FishType> types = new List<FishBehaviour.FishType>();
@@ -52,7 +51,7 @@ public class PhotoManager : MonoBehaviour {
         return false;
     }
 
-    void checkEndGame()
+    public void checkEndGame()
     {
         TMPro.TMP_Text txt = photoScore.GetComponent<TMPro.TMP_Text>();
         txt.text = types.Count.ToString() + "/" + FIshSpawner.instance.typesPresent.Count.ToString();

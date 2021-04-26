@@ -15,7 +15,7 @@ public class FIshSpawner : MonoBehaviour
     public GameObject net;
     public List<FishesInfos> Fishes = new List<FishesInfos>();
 
-    public List<FishBehaviour.FishType> typesPresent = new List<FishBehaviour.FishType>();
+    public List<FishBehaviour.FishType> typesPresent;
 
     public static FIshSpawner instance = null;
 
@@ -29,6 +29,7 @@ public class FIshSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        typesPresent = new List<FishBehaviour.FishType>();
         foreach (FishesInfos fishinfos in Fishes)
         {
             if(fishinfos.number > 0) typesPresent.Add(fishinfos.prefab.GetComponent<FishBehaviour>().type);
@@ -39,6 +40,7 @@ public class FIshSpawner : MonoBehaviour
                 newfish.transform.SetParent(net.transform);
             }
         }
+        PhotoManager.instance.checkEndGame();
     }
 
     // Update is called once per frame
