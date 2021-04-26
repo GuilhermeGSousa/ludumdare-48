@@ -5,8 +5,14 @@ using UnityEngine;
 public class Activator : MonoBehaviour
 {
     SpriteRenderer sr;
-    public KeyCode key;
-    public KeyCode key_2;
+    public KeyCode key_w;
+    public KeyCode key_a;
+    public KeyCode key_s;
+    public KeyCode key_d;
+    public KeyCode key_up;
+    public KeyCode key_lft;
+    public KeyCode key_bot;
+    public KeyCode key_rgt;
     bool active = false;
     GameObject note;
     Color old;
@@ -42,7 +48,14 @@ public class Activator : MonoBehaviour
                 tickSound.Play();
             }
         }
-        if(Input.GetKeyDown(key) || Input.GetKeyDown(key_2))
+        if(Input.GetKeyDown(key_w)
+          || Input.GetKeyDown(key_a)
+          || Input.GetKeyDown(key_s)
+          || Input.GetKeyDown(key_d)
+          || Input.GetKeyDown(key_up)
+          || Input.GetKeyDown(key_lft)
+          || Input.GetKeyDown(key_bot)
+          || Input.GetKeyDown(key_rgt))
         {
             StartCoroutine(Pressed());
             if(active)
@@ -57,7 +70,10 @@ public class Activator : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         active = true;
-        if(col.gameObject.tag == "Note")
+        if(col.gameObject.tag == "Note_up"
+           || col.gameObject.tag == "Note_left"
+           || col.gameObject.tag == "Note_down"
+           || col.gameObject.tag == "Note_right")
             note = col.gameObject;
     }
 
