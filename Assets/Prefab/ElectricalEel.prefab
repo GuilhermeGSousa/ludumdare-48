@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: -8218340522858554555}
   - component: {fileID: 7115659329675277820}
   - component: {fileID: 9141639137551107193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ElectricalEel
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.2
 --- !u!114 &9141639137551107193
 MonoBehaviour:
   m_ObjectHideFlags: 0
