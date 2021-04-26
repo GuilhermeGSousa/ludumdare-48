@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2901040542219431090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1245673, y: -1.798083, z: -2.5542445}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.07655566}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   predilectionLayers: 04000000
-  speed: 7
+  speed: 3
   speedAnimationFactor: 1
   scaredSpeed: -1
   direction: 0
