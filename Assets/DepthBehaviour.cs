@@ -28,6 +28,8 @@ public class DepthBehaviour : MonoBehaviour {
     public float maxPointLightIntensity = 2.04f;
     public float maxFlahsLightIntensity = 2.95f;
 
+    public float minGlobalLightIntensity = 0.06f;
+
     [SerializeField] float noLightDepth;
     [SerializeField] Light2D globalLight;
     Submarine submarine;
@@ -59,13 +61,9 @@ public class DepthBehaviour : MonoBehaviour {
     {
         Vector2 playerPosition = submarine.gameObject.transform.position;
 
-        float diffFactor =1f;
-        if(playerPosition.y > -noLightDepth)
-        {
-            diffFactor = Mathf.Abs(playerPosition.y - startY) / Mathf.Abs(noLightDepth - startY);
-            
-        }
-        globalLight.intensity = 1.0f-diffFactor;
+        float diffFactor = Mathf.Abs(playerPosition.y - startY) / Mathf.Abs(noLightDepth - startY);
+
+        globalLight.intensity = Mathf.Max(minGlobalLightIntensity, 1.0f - diffFactor);
         foreach(GameObject obj in pointLights)
         {
             Light2D light = obj.GetComponent<Light2D>();
