@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2809879573821749140
-    second: NautilusAnim_0
+    second: NautilusAnim_1
   - first:
       213: -6051044304569714039
     second: NautilusAnim_2
@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -6732857327143444224
     second: NautilusAnim_8
+  - first:
+      213: -8920625801739143173
+    second: NautilusAnim_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +73,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -89,7 +92,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,7 +104,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -113,7 +116,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -127,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NautilusAnim_0
+      name: NautilusAnim_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 311
-        width: 88
-        height: 19
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +154,10 @@ TextureImporter:
       name: NautilusAnim_2
       rect:
         serializedVersion: 2
-        x: 157
-        y: 311
-        width: 56
-        height: 20
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +175,10 @@ TextureImporter:
       name: NautilusAnim_3
       rect:
         serializedVersion: 2
-        x: 309
-        y: 311
-        width: 15
-        height: 20
+        x: 0
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +196,10 @@ TextureImporter:
       name: NautilusAnim_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 183
-        width: 56
-        height: 20
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +217,10 @@ TextureImporter:
       name: NautilusAnim_5
       rect:
         serializedVersion: 2
-        x: 142
-        y: 183
-        width: 87
-        height: 19
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +238,10 @@ TextureImporter:
       name: NautilusAnim_6
       rect:
         serializedVersion: 2
-        x: 278
-        y: 183
-        width: 62
-        height: 18
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +259,10 @@ TextureImporter:
       name: NautilusAnim_7
       rect:
         serializedVersion: 2
-        x: 53
-        y: 55
-        width: 15
-        height: 18
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +280,10 @@ TextureImporter:
       name: NautilusAnim_8
       rect:
         serializedVersion: 2
-        x: 167
-        y: 55
-        width: 59
-        height: 18
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,6 +293,27 @@ TextureImporter:
       bones: []
       spriteID: 001aa34eee51092a0800000000000000
       internalID: -6732857327143444224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NautilusAnim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf77729c812933480800000000000000
+      internalID: -8920625801739143173
       vertices: []
       indices: 
       edges: []
