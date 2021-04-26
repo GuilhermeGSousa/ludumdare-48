@@ -82,10 +82,15 @@ public class Activator : MonoBehaviour
         {
             if (note.tag == pressed_key_tag)
             {
+                gm.GetComponent<MiniGamePropelleGameManager>().AddStreak();
                 Destroy(note);
                 AddScore();
+                active = false;
             }
-            active = false;
+        }
+        else
+        {
+            gm.GetComponent<MiniGamePropelleGameManager>().ResetStreak();
         }
     }
 
