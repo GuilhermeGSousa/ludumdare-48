@@ -49,22 +49,43 @@ public class Activator : MonoBehaviour
                 tickSound.Play();
             }
         }
+
         if(Input.GetKeyDown(key_w)
-          || Input.GetKeyDown(key_a)
-          || Input.GetKeyDown(key_s)
-          || Input.GetKeyDown(key_d)
-          || Input.GetKeyDown(key_up)
-          || Input.GetKeyDown(key_lft)
-          || Input.GetKeyDown(key_bot)
-          || Input.GetKeyDown(key_rgt))
+          || Input.GetKeyDown(key_up))
         {
             StartCoroutine(Pressed());
-            if(active)
+            PressedKey("Note_up");
+        }
+        else if(Input.GetKeyDown(key_a)
+               || Input.GetKeyDown(key_lft))
+        {
+            StartCoroutine(Pressed());
+            PressedKey("Note_left");
+        }
+        else if(Input.GetKeyDown(key_s)
+               || Input.GetKeyDown(key_bot))
+        {
+            StartCoroutine(Pressed());
+            PressedKey("Note_down");
+        }
+        else if(Input.GetKeyDown(key_d)
+               || Input.GetKeyDown(key_rgt))
+        {
+            StartCoroutine(Pressed());
+            PressedKey("Note_right");
+        }
+    }
+
+    void PressedKey(string pressed_key_tag)
+    {
+        if(active)
+        {
+            if (note.tag == pressed_key_tag)
             {
                 Destroy(note);
                 AddScore();
-                active = false;
             }
+            active = false;
         }
     }
 
