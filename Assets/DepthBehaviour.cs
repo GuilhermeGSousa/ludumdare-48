@@ -59,7 +59,7 @@ public class DepthBehaviour : MonoBehaviour {
     {
         Vector2 playerPosition = submarine.gameObject.transform.position;
 
-        float diffFactor =0.93f;
+        float diffFactor =1f;
         if(playerPosition.y > -noLightDepth)
         {
             diffFactor = Mathf.Abs(playerPosition.y - startY) / Mathf.Abs(noLightDepth - startY);
