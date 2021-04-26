@@ -92,8 +92,7 @@ public class Submarine : MonoBehaviour
 
     private void OnDeath()
     {
-        Debug.Log("U ded");
-        SceneManager.LoadScene("EndGame");
+        SceneManager.LoadScene("LostGame");
     }
 
     private void UpdateLights()
