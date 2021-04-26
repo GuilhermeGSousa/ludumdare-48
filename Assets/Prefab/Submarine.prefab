@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 5706400773763731163}
   - component: {fileID: 5706400773763731156}
   - component: {fileID: 5048781081367452659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: conic light
   m_TagString: FlashLights
   m_Icon: {fileID: 0}
