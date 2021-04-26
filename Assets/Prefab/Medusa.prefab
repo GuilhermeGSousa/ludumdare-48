@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 6983097824022347090}
   - component: {fileID: 6464179606600387361}
   - component: {fileID: 2941606224018683299}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Medusa
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -241,4 +241,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.15

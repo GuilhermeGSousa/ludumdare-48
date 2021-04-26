@@ -39,6 +39,8 @@ public class Submarine : MonoBehaviour
     float inclinationT = 0.0f;
     bool pictureAxis = false;
 
+    public GameObject canTakePictureOf = null;
+
     private void Awake() {
         if(instance == null) instance = this;
         else
@@ -172,15 +174,11 @@ public class Submarine : MonoBehaviour
     }
 
     public void TryToTakePicture() {
-        GameObject[] fishes = GameObject.FindGameObjectsWithTag("Fish");
-
-        foreach(GameObject fish in fishes) {
-            if ((fish.transform.position - photoZone.transform.position).magnitude < photoZone.transform.lossyScale.x) {
-                FishBehaviour fishB = fish.GetComponent<FishBehaviour>();
-                PhotoManager.instance.TrytoAdd(fishB.type);
-                Debug.Log("Cheeeeese !");
-                break;
-            }
-        }
+        if (canTakePictureOf == null)
+            return;
+        
+        FishBehaviour fishB = canTakePictureOf.GetComponent<FishBehaviour>();
+        PhotoManager.instance.TrytoAdd(fishB.type);
+        canTakePictureOf = null;
     }
 }
