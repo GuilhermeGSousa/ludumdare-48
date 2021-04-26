@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2488549637077384947}
   - component: {fileID: 4985500612312338776}
-  - component: {fileID: 7703529572613316572}
+  - component: {fileID: 4723717578914383021}
   m_Layer: 5
   m_Name: ProbeBar
   m_TagString: Untagged
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7703529572613316572
+--- !u!114 &4723717578914383021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,7 +325,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6325923708306066598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a8b70b592fa42429bcffb089b4b661, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ffbe1208c5340b4093dc7e17987f2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4985500612312338776}
+  critical: 0
+  fill: {fileID: 707956967791111983}
+  fillColor: {r: 1, g: 0.50980395, b: 0.19215687, a: 0}
+  criticalColor: {r: 0, g: 0, b: 0, a: 0}

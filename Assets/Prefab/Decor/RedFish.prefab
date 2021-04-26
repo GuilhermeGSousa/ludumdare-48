@@ -4849,16 +4849,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f40200f03731aa43a7b063115de3282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 4
   predilectionLayers: 01000000
   speed: 0.2
   speedAnimationFactor: 1
-  scaredSpeed: 4
+  scaredSpeed: 2
   direction: 0
   rotationSpeed: 1
   doFlips: 0
   isFlipped: 1
-  maxSpeed: 5
+  maxSpeed: 3
   submarineMinSpeed: 3
   minTimeChangeDirection: 2
   maxTimeChangeDirection: 5

@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6938432420540427954}
   - component: {fileID: 6938432420540427952}
-  - component: {fileID: 6938432420540427953}
+  - component: {fileID: 2398670373261913778}
   m_Layer: 5
   m_Name: O2Bar
   m_TagString: Untagged
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6938432420540427953
+--- !u!114 &2398670373261913778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,7 +325,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6938432420540427955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a8b70b592fa42429bcffb089b4b661, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ffbe1208c5340b4093dc7e17987f2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 6938432420540427952}
+  critical: 1
+  fill: {fileID: 6938432419187245234}
+  fillColor: {r: 1, g: 1, b: 1, a: 1}
+  criticalColor: {r: 0.8679245, g: 0.036845837, b: 0.036845837, a: 1}

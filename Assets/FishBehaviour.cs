@@ -9,7 +9,10 @@ public class FishBehaviour : MonoBehaviour
         ElectricEel, 
         Tamboril, 
         Medusa,
-        Kraken
+        Kraken,
+        RedFish,
+        YellowFish,
+        Poulpitos
     };
 
     [SerializeField] public FishType type;

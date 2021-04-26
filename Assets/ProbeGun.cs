@@ -7,7 +7,7 @@ public class ProbeGun : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] GameObject probe;
     [SerializeField] float totalProbeCooldownTime = 20;
-    [SerializeField] ProgressBar probeBar;
+    [SerializeField] MyProgressBar probeBar;
     float timeSinceLastProbe = 0;
     public GameObject probeNet;
 
@@ -23,7 +23,7 @@ public class ProbeGun : MonoBehaviour
         if(timeSinceLastProbe <= totalProbeCooldownTime)
             timeSinceLastProbe += Time.deltaTime;
 
-        probeBar.SetProgress(timeSinceLastProbe / totalProbeCooldownTime);
+        probeBar.SetOxygen(timeSinceLastProbe / totalProbeCooldownTime);
 
         if(timeSinceLastProbe > totalProbeCooldownTime)
         {

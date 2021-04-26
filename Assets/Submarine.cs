@@ -22,7 +22,7 @@ public class Submarine : MonoBehaviour
     [SerializeField] float totalOxigenTime = 120;
 
     [Header("UI")]
-    [SerializeField] ProgressBar oxygenBar;
+    [SerializeField] MyProgressBar oxygenBar;
     float currentOxigenTime;
     Vector2 controlDirection;
     Vector3 mousePosition;
@@ -84,7 +84,7 @@ public class Submarine : MonoBehaviour
     {
         currentOxigenTime -= Time.deltaTime;
 
-        oxygenBar.SetProgress(currentOxigenTime / totalOxigenTime);
+        oxygenBar.SetOxygen(currentOxigenTime / totalOxigenTime);
 
         if(currentOxigenTime <= 0)
         {
