@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6891494850328776237}
   - component: {fileID: 7248011246527972807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light 2D (2)
   m_TagString: FlashLights
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3632852858214251265}
   - component: {fileID: 4368942432112895486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light 2D (1)
   m_TagString: FlashLights
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2375658964795503997}
   - component: {fileID: 4323476950595641955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light 2D
   m_TagString: FlashLights
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 5706400773763731163}
   - component: {fileID: 5706400773763731156}
   - component: {fileID: 5048781081367452659}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: conic light
   m_TagString: FlashLights
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5706400774453487785}
   - component: {fileID: 5706400774453487786}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: internal light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 2378208757508522925}
   - component: {fileID: 8765200994970478132}
   - component: {fileID: 4861468895930335836}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
