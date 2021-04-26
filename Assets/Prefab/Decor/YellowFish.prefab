@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4485639950742366847}
   - component: {fileID: 3218068554920423756}
   - component: {fileID: 1429656459240072200}
+  - component: {fileID: 8356009000782174893}
   m_Layer: 0
   m_Name: YellowFish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4849,17 +4850,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  predilectionLayers: 01000000
-  speed: 1
+  predilectionLayers: 02000000
+  speed: 0.2
   speedAnimationFactor: 1
-  scaredSpeed: 5
+  scaredSpeed: 4
   direction: 0
   rotationSpeed: 1
   doFlips: 0
   isFlipped: 0
   maxSpeed: 5
-  submarineMinSpeed: 1
-  minTimeChangeDirection: 2
+  submarineMinSpeed: 3
+  minTimeChangeDirection: 5
   maxTimeChangeDirection: 5
   forwardVector: {x: 1, y: 0}
   minMaxDepth: {x: 0, y: 0}
+--- !u!58 &8356009000782174893
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218068554920423757}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.99

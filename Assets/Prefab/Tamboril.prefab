@@ -129,7 +129,7 @@ MonoBehaviour:
   doFlips: 1
   isFlipped: 0
   maxSpeed: 5
-  submarineMinSpeed: 1
+  submarineMinSpeed: 3
   minTimeChangeDirection: 2
   maxTimeChangeDirection: 5
   forwardVector: {x: 1, y: 0}
