@@ -27,7 +27,6 @@ public class CanShootPhotoTrigger : MonoBehaviour
         foreach(Collider2D c in colliders) {
             if(c != null && c.gameObject != null && c.gameObject.tag == "Fish") {
                 sub.canTakePictureOf = c.gameObject;
-                Debug.Log("You can take picture");
             }
         }
     }
