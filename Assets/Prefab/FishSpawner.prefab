@@ -76,9 +76,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   net: {fileID: 2112736137097728549}
   Fishes:
-  - number: 10
+  - number: 20
     prefab: {fileID: 6983097824022347102, guid: 1798f75bdd9e53d4ca0ebe5b2e6d0ba0, type: 3}
-  - number: 15
+  - number: 25
     prefab: {fileID: 8902998660394626764, guid: c6eff9344bc761640b16f19c9289393e, type: 3}
-  - number: 30
+  - number: 20
     prefab: {fileID: 9141639137551107192, guid: f026b92691d4929428e6bd17bdcb62b8, type: 3}
+  - number: 1
+    prefab: {fileID: 2901040542219431090, guid: 4c0667eb08c60774b8b9669455d2a685, type: 3}
+  - number: 20
+    prefab: {fileID: 3218068554920423757, guid: edd913de523be3449a020819ebaad8f5, type: 3}
+  - number: 20
+    prefab: {fileID: 3218068554920423757, guid: 9d6fd6170cb2b2d46986721cc48fc574, type: 3}
+  - number: 20
+    prefab: {fileID: 8172311433680552897, guid: a012bf288a10ca84a87dee6f64241a32, type: 3}
+  typesPresent: 

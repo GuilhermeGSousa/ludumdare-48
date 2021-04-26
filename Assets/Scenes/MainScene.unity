@@ -24448,46 +24448,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[0].number
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[1].number
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[2].number
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[3].number
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[3].prefab
-      value: 
-      objectReference: {fileID: 2901040542219431090, guid: 4c0667eb08c60774b8b9669455d2a685, type: 3}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[4].number
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[4].prefab
-      value: 
-      objectReference: {fileID: 3218068554920423757, guid: edd913de523be3449a020819ebaad8f5, type: 3}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[5].number
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6707181003636983439, guid: 06e07a239311f1a4daf023334acda752, type: 3}
-      propertyPath: Fishes.Array.data[5].prefab
-      value: 
-      objectReference: {fileID: 3218068554920423757, guid: 9d6fd6170cb2b2d46986721cc48fc574, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e07a239311f1a4daf023334acda752, type: 3}
 --- !u!1 &2134789643
