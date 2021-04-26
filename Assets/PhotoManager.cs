@@ -1,16 +1,23 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PhotoManager : MonoBehaviour {
     public static PhotoManager instance = null;
 
     [SerializeField] GameObject photoBook = null;
+    public GameObject photoScore;
 
     private void Awake() {
         if(instance == null) instance = this;
         else
             Destroy (gameObject);
+        
+    }
 
+    private void Start() {
+        checkEndGame();
     }
 
     public List<FishBehaviour.FishType> types = new List<FishBehaviour.FishType>();
@@ -39,9 +46,19 @@ public class PhotoManager : MonoBehaviour {
 
             // Replace the original active Render Texture.
             RenderTexture.active = currentRT;
-
+            checkEndGame();
             return true;
         }
         return false;
+    }
+
+    void checkEndGame()
+    {
+        TMPro.TMP_Text txt = photoScore.GetComponent<TMPro.TMP_Text>();
+        txt.text = types.Count.ToString() + "/" + FIshSpawner.instance.typesPresent.Count.ToString();
+        if(types.Count ==  FIshSpawner.instance.typesPresent.Count)
+        {
+            SceneManager.LoadScene("EndGame");
+        }
     }
 }

@@ -214,7 +214,7 @@ MonoBehaviour:
   scaredSpeed: -1
   direction: 0
   rotationSpeed: 1
-  doFlips: 0
+  doFlips: 1
   isFlipped: 0
   maxSpeed: 3
   submarineMinSpeed: 1

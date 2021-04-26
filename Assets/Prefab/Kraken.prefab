@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f40200f03731aa43a7b063115de3282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
-  predilectionLayers: 00000000
+  type: 3
+  predilectionLayers: 04000000
   speed: 7
   speedAnimationFactor: 1
   scaredSpeed: -1

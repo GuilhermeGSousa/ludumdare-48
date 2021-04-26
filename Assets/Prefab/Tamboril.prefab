@@ -122,13 +122,16 @@ MonoBehaviour:
   type: 1
   predilectionLayers: 02000000
   speed: 4
+  speedAnimationFactor: 1
   scaredSpeed: 5
   direction: 0
   rotationSpeed: 1
-  doFlips: 0
+  doFlips: 1
   isFlipped: 0
   maxSpeed: 5
   submarineMinSpeed: 1
+  minTimeChangeDirection: 2
+  maxTimeChangeDirection: 5
   forwardVector: {x: 1, y: 0}
   minMaxDepth: {x: 0, y: 0}
 --- !u!212 &8902998660394626767

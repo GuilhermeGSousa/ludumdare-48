@@ -8,8 +8,7 @@ public class FishBehaviour : MonoBehaviour
     {
         ElectricEel, 
         Tamboril, 
-        Nemo,
-        Mesusa,
+        Medusa,
         Kraken
     };
 
