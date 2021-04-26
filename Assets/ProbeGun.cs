@@ -10,6 +10,8 @@ public class ProbeGun : MonoBehaviour
     [SerializeField] ProgressBar probeBar;
     float timeSinceLastProbe = 0;
     public GameObject probeNet;
+
+    public bool canshoot = false;
     void Start()
     {
         
@@ -23,12 +25,22 @@ public class ProbeGun : MonoBehaviour
 
         probeBar.SetProgress(timeSinceLastProbe / totalProbeCooldownTime);
 
-        if(Input.GetMouseButtonDown(0) && timeSinceLastProbe > totalProbeCooldownTime)
+        if(timeSinceLastProbe > totalProbeCooldownTime)
+        {
+            canshoot = true;
+        }
+
+    }
+
+    public void Shoot()
+    {
+        Debug.Log("Shoot");
+        if (canshoot)
         {
             GameObject probeInstance = Instantiate(probe, transform.position, transform.rotation);
             probeInstance.transform.SetParent(probeNet.transform);
             timeSinceLastProbe = 0;
+            canshoot = false;
         }
-
     }
 }
