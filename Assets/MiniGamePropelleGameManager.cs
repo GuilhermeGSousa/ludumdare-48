@@ -29,10 +29,12 @@ public class MiniGamePropelleGameManager : MonoBehaviour
 
     void Win()
     {
+        print("u rock");
     }
 
     void Lose()
     {
+        print("u suck");
     }
 
     public void AddStreak()
@@ -72,6 +74,11 @@ public class MiniGamePropelleGameManager : MonoBehaviour
         if (needle_current > -max_needle_shift)
         {
             PlayerPrefs.SetInt("RockMeter", needle_current - 1);
+            if (needle_current > -max_needle_shift)
+            {
+                // Extra penalty if yout get one wrong
+                PlayerPrefs.SetInt("RockMeter", needle_current - 1);
+            }
         }
         else
         {
