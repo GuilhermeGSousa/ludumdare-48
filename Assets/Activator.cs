@@ -6,6 +6,7 @@ public class Activator : MonoBehaviour
 {
     SpriteRenderer sr;
     public KeyCode key;
+    public KeyCode key_2;
     bool active = false;
     GameObject note;
     Color old;
@@ -41,7 +42,7 @@ public class Activator : MonoBehaviour
                 tickSound.Play();
             }
         }
-        else if(Input.GetKeyDown(key))
+        if(Input.GetKeyDown(key) || Input.GetKeyDown(key_2))
         {
             StartCoroutine(Pressed());
             if(active)
