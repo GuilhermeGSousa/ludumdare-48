@@ -6,6 +6,7 @@ public class RockMeter : MonoBehaviour
 {
     int rm, rm_max;
     GameObject needle;
+    double max_distance = 1.5;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class RockMeter : MonoBehaviour
     void Update()
     {
         rm = PlayerPrefs.GetInt("RockMeter");
-        float new_x = (float) rm / rm_max;
-        needle.transform.localPosition = new Vector3(new_x, 0, 0);
+        float new_x_norm = (float) rm / rm_max;
+        needle.transform.localPosition = new Vector3((new_x_norm * (float)max_distance), 0, 0);
     }
 }

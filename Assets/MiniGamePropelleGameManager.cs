@@ -71,7 +71,7 @@ public class MiniGamePropelleGameManager : MonoBehaviour
         needle_current = PlayerPrefs.GetInt("RockMeter");
         if (needle_current > -max_needle_shift)
         {
-            PlayerPrefs.SetInt("RockMeter", needle_current - 2);
+            PlayerPrefs.SetInt("RockMeter", needle_current - 1);
         }
         else
         {
