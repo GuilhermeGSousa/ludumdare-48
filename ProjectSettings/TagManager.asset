@@ -7,6 +7,10 @@ TagManager:
   - UI
   - Bounds
   - Note
+  - Note_up
+  - Note_down
+  - Note_right
+  - Note_left
   layers:
   - Default
   - TransparentFX
