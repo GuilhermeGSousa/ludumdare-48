@@ -179,6 +179,7 @@ public class Submarine : MonoBehaviour
             if ((fish.transform.position - photoZone.transform.position).magnitude < photoZone.transform.lossyScale.x) {
                 FishBehaviour fishB = fish.GetComponent<FishBehaviour>();
                 PhotoManager.instance.TrytoAdd(fishB.type);
+                Debug.Log("Cheeeeese !");
                 break;
             }
         }

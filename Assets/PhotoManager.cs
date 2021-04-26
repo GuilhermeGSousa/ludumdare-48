@@ -13,7 +13,7 @@ public class PhotoManager : MonoBehaviour {
 
     }
 
-    List<FishBehaviour.FishType> types = new List<FishBehaviour.FishType>();
+    public List<FishBehaviour.FishType> types = new List<FishBehaviour.FishType>();
 
     public bool TrytoAdd(FishBehaviour.FishType type) {
         if (!types.Contains(type)) {

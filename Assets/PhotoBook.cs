@@ -19,7 +19,7 @@ public class PhotoBook : MonoBehaviour
     }
 
     public void AddPicture(Texture2D image) {
-        var pictureGo = Instantiate(framePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        var pictureGo = Instantiate(framePrefab, transform.position, Quaternion.identity);
         PhotoBehaviour pB = pictureGo.GetComponent<PhotoBehaviour>();
         pB.setImage(image);
         pictureGo.transform.SetParent(page.transform);

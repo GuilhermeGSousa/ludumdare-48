@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
-  predilectionLayers: 04000000
+  predilectionLayers: 00000000
   speed: 7
   speedAnimationFactor: 1
   scaredSpeed: -1

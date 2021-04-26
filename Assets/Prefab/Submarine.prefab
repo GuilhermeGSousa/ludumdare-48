@@ -89,6 +89,7 @@ MonoBehaviour:
   totalProbeCooldownTime: 10
   probeBar: {fileID: 0}
   probeNet: {fileID: 0}
+  canshoot: 0
 --- !u!1 &5706400774453487784
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +397,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 0.6
+  field of view: 7.02
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
