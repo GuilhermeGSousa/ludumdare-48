@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Submarine : MonoBehaviour
 {
     public static Submarine instance = null;
+    [SerializeField] LayerMask fishLayerMask;
     [Header("Movement")]
     [SerializeField] float thrust = 1f;
     [SerializeField] float maxSpeed = 5f;
@@ -174,11 +175,14 @@ public class Submarine : MonoBehaviour
     }
 
     public void TryToTakePicture() {
-        if (canTakePictureOf == null)
-            return;
+
         
-        FishBehaviour fishB = canTakePictureOf.GetComponent<FishBehaviour>();
-        PhotoManager.instance.TrytoAdd(fishB.type);
-        canTakePictureOf = null;
+        RaycastHit2D hit = Physics2D.BoxCast(photoZone.transform.position, new Vector3(2f, 2f), 0f, transform.right, 0, fishLayerMask);
+
+        if(hit)
+        {
+            FishBehaviour fish = hit.collider.gameObject.GetComponent<FishBehaviour>();
+            PhotoManager.instance.TrytoAdd(fish.type);
+        }
     }
 }

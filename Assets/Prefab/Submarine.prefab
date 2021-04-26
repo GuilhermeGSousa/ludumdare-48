@@ -506,6 +506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e1aefbf6ff3c64ebc530faf166afcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   thrust: 5
   maxSpeed: 5
   linearDrag: 1
