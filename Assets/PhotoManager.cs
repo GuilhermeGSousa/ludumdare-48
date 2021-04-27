@@ -7,7 +7,7 @@ public class PhotoManager : MonoBehaviour {
     public static PhotoManager instance = null;
 
     [SerializeField] GameObject photoBook = null;
-    [SerializeField] float waitTime = 6.0f;
+    [SerializeField] float waitTime = 4.0f;
     public GameObject photoScore;
 
     private float timer = 0.0f;
@@ -25,11 +25,13 @@ public class PhotoManager : MonoBehaviour {
     }
 
     private void Update() {
-        timer += Time.deltaTime;
-        if (timer > waitTime && gameIsDone)
-        {
-            gameIsDone = false;
-            SceneManager.LoadScene("EndGame");
+        if(gameIsDone) {
+            timer += Time.deltaTime;
+            if (timer > waitTime)
+            {
+                gameIsDone = false;
+                SceneManager.LoadScene("EndGame");
+            }
         }
     }
 
