@@ -157,7 +157,6 @@ public class FishBehaviour : MonoBehaviour
         if(scaredSpeed != 0  && other.gameObject.CompareTag("Player"))
         {
             Rigidbody2D submarine = other.gameObject.GetComponent<Rigidbody2D>();
-            
             if(submarine.velocity.magnitude > submarineMinSpeed)
             {
                 // multiply by scared speed to make negative scared speed make follow / attack
