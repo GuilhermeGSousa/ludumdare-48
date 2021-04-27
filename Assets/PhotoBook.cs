@@ -23,5 +23,6 @@ public class PhotoBook : MonoBehaviour
         PhotoBehaviour pB = pictureGo.GetComponent<PhotoBehaviour>();
         pB.setImage(image);
         pictureGo.transform.SetParent(page.transform);
+        pictureGo.transform.localScale = new Vector3(1,1,1);
     }
 }
