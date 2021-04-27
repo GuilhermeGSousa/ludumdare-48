@@ -7,7 +7,12 @@ public class PhotoManager : MonoBehaviour {
     public static PhotoManager instance = null;
 
     [SerializeField] GameObject photoBook = null;
+    [SerializeField] float waitTime = 6.0f;
     public GameObject photoScore;
+
+    private float timer = 0.0f;
+
+    private bool gameIsDone = false;
 
     private void Awake() {
         if(instance == null) instance = this;
@@ -17,6 +22,15 @@ public class PhotoManager : MonoBehaviour {
     }
 
     private void Start() {
+    }
+
+    private void Update() {
+        timer += Time.deltaTime;
+        if (timer > waitTime && gameIsDone)
+        {
+            gameIsDone = false;
+            SceneManager.LoadScene("EndGame");
+        }
     }
 
     public List<FishBehaviour.FishType> types = new List<FishBehaviour.FishType>();
@@ -55,9 +69,12 @@ public class PhotoManager : MonoBehaviour {
     {
         TMPro.TMP_Text txt = photoScore.GetComponent<TMPro.TMP_Text>();
         txt.text = types.Count.ToString() + "/" + FIshSpawner.instance.typesPresent.Count.ToString();
-        if(types.Count ==  FIshSpawner.instance.typesPresent.Count)
+        if(types.Count == FIshSpawner.instance.typesPresent.Count)
         {
-            SceneManager.LoadScene("EndGame");
+            GameObject panel = photoBook.transform.Find("PhotoBookPanel").gameObject;
+            panel.SetActive(true);
+
+            gameIsDone = true;
         }
     }
 }
